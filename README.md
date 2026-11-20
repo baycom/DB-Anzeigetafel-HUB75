@@ -86,4 +86,8 @@ src/webpage.h     Web-Frontend (HTML/JS, eingebettet)
 - Die DB-Schnittstelle ist inoffiziell und kann sich jederzeit ändern. Das Abfrageintervall sollte nicht unter 60 s liegen (Minimum 30 s).
 - Meldet die Tafel dauerhaft „Antwort ungueltig“ (im seriellen Log `HTTP status 452 OPS_BLOCKED`), sperrt der Akamai-Schutz der DB die eigene Adresse. Dann im Web-Frontend unter *WLAN* „IPv6 verwenden“ abschalten (oder umgekehrt) und ggf. eine neue öffentliche IP holen. Eine neue IPv4 ändert die IPv6-Adresse in der Regel nicht.
 - Ein Zeitfenster über Mitternacht (z.B. 22:00–02:00) wird am jeweils aktuellen Wochentag geprüft.
-- DBAPI steht unter GPL-3.0. Wer die Firmware weitergibt, muss deren Lizenzbedingungen beachten.
+- Ein Richtungsfilter pro Profil zeigt nur Fahrten mit passendem Ziel (bei Ankünften: Herkunft). Gefiltert wird nach dem Endziel, nicht nach Zwischenhalten. `GET /api/targets?id=<Stations-ID>&type=dep|arr&products=<Maske>` liefert die aktuell angefahrenen Ziele zur Auswahl.
+
+## Lizenz
+
+GPL-3.0, siehe [LICENSE](LICENSE). Unter `lib/DBAPI` liegt eine Kopie von [soundstorm/DBAPI](https://github.com/soundstorm/DBAPI) 3.3.1 (ebenfalls GPL-3.0) mit einer Korrektur: Bei Ankünften wird aus dem Objekt `abgangsOrt` nur der Name übernommen.
