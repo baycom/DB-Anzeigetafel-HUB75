@@ -1,6 +1,6 @@
 # DB-Anzeigetafel für 64x64 HUB75 + ESP32 Trinity
 
-Zeigt Abfahrten bzw. Ankünfte der Deutschen Bahn (über [soundstorm/DBAPI](https://registry.platformio.org/libraries/soundstorm/DBAPI)) auf einem HUB75-LED-Panel an. Konfiguriert wird alles über ein Web-Frontend.
+Zeigt Abfahrten bzw. Ankünfte der Deutschen Bahn (über [DBAPI](https://github.com/ArduinoHannover/DBAPI)) auf einem HUB75-LED-Panel an. Konfiguriert wird alles über ein Web-Frontend.
 
 ## Funktionen
 
@@ -90,4 +90,4 @@ src/webpage.h     Web-Frontend (HTML/JS, eingebettet)
 
 ## Lizenz
 
-GPL-3.0, siehe [LICENSE](LICENSE). Unter `lib/DBAPI` liegt eine Kopie von [soundstorm/DBAPI](https://github.com/soundstorm/DBAPI) 3.3.1 (ebenfalls GPL-3.0) mit einer Korrektur: Bei Ankünften wird aus dem Objekt `abgangsOrt` nur der Name übernommen.
+GPL-3.0, siehe [LICENSE](LICENSE). Verwendet wird der Fork [baycom/DBAPI](https://github.com/baycom/DBAPI/tree/fix-arrival-origin) von [ArduinoHannover/DBAPI](https://github.com/ArduinoHannover/DBAPI) (ebenfalls GPL-3.0) mit einer Korrektur: Bei Ankünften wird aus dem Objekt `abgangsOrt` nur der Name übernommen.
