@@ -59,13 +59,15 @@ Die Farbtiefe wird in `platformio.ini` über `PIXEL_COLOR_DEPTH_BITS` eingestell
 ## Projektstruktur
 
 ```
-src/main.cpp      Setup/Loop
-src/config.*      Konfiguration (LittleFS /config.json)
-src/net.*         WLAN, Setup-AP, Captive Portal, mDNS, NTP
-src/board.*       FreeRTOS-Task: zyklischer Abruf über DBAPI
-src/display.*     Darstellung (Offscreen-Canvas → HUB75-DMA)
-src/web.*         Webserver, JSON-API, OTA
-src/webpage.h     Web-Frontend (HTML/JS, eingebettet)
+src/main.cpp          Setup/Loop
+src/config.cpp        Konfiguration (LittleFS /config.json)
+src/net.cpp           WLAN, Setup-AP, Captive Portal, mDNS, NTP
+src/board.cpp         FreeRTOS-Task: zyklischer Abruf über DBAPI
+src/display.cpp       Darstellung (Offscreen-Canvas → HUB75-DMA)
+src/web.cpp           Webserver, JSON-API, OTA
+src/util.cpp          Hilfsfunktionen (Umlaute, Zeitfenster)
+include/*.h           zugehörige Header
+include/webpage.h     Web-Frontend (HTML/JS, eingebettet)
 ```
 
 ### JSON-API
